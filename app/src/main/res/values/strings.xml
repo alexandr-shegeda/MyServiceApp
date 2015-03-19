@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyServiceApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="start">Download</string>
+    <string name="txt_update">Update</string>
+</resources>
