@@ -90,7 +90,7 @@ public class MainActivity extends ActionBarActivity {
 //            f.delete();
             findViewById(R.id.btn_download).setVisibility(View.GONE);
             findViewById(R.id.update_layout).setVisibility(View.GONE);
-            findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+            findViewById(R.id.progress).setVisibility(View.VISIBLE);
 //            showDialog(progress_bar_type);
         }
 
@@ -162,12 +162,12 @@ public class MainActivity extends ActionBarActivity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog after the file was downloaded
 //            dismissDialog(progress_bar_type);
-            progressBar.setVisibility(View.GONE);
+            findViewById(R.id.progress).setVisibility(View.GONE);
             findViewById(R.id.update_layout).setVisibility(View.VISIBLE);
 //            setContentView(R.layout.update_layout);
             TextView stamp = (TextView) findViewById(R.id.time_stamp);
             stamp.setText(sdf.format(now).toString());
-            sharedPref.edit().putString("last_update", stamp.getText().toString());
+            sharedPref.edit().putString("last_update", stamp.getText().toString()).commit();
         }
     }
 
